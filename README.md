@@ -3,7 +3,8 @@
 A new Flutter project.
 
 
-https://github.com/Samindu-Denuwan/qoute_app/assets/86373715/7431e12f-7a56-4f89-b70b-dab5f1d867c7
+![quotes](https://github.com/Samindu-Denuwan/qoute_app/assets/86373715/430de10c-0d3e-4d4b-8d35-db09c8a6e395)
+
 
 
 ## Getting Started
