@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:qoute_app/common/app_bar.dart';
 import 'package:qoute_app/common/constants.dart';
+import 'package:qoute_app/common/reusable_quotes.dart';
 import 'package:qoute_app/controllers/quotes_provider.dart';
 
 import '../../models/random_quotes_model.dart';
@@ -16,7 +17,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text("Quotes of the Day",
-          style: appStyle(Colors.black, 20.sp, FontWeight.w400),),
+          style: appStyle(Colors.black, 20, FontWeight.w400),),
       ),
       body: FutureBuilder(
         future: quotesNotifier.getRandomQuote(),
@@ -24,20 +25,12 @@ class HomePage extends StatelessWidget {
     context, snapshot) {
          var randomQuotes= snapshot.data;
         return randomQuotes != null?Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Text("\" ${randomQuotes.quote} \"",
-                style: appStyle(Colors.black, 18.sp, FontWeight.w500),),
-             SizedBox(height: 10.h,),
-              Text(randomQuotes.author,
-                style: appStyle(Colors.grey.shade500, 16.sp, FontWeight.w400),),
-            ],
-          ),
-        )
+        child: ReusableQuotes(
+            randomQuotes: randomQuotes,
+            quote: "\" ${randomQuotes.quote} \"",
+            author: " ${randomQuotes.author}",
+            style: appStyle(Colors.black, 18, FontWeight.w500),
+            style_author: appStyle(Colors.grey, 16, FontWeight.w400))
     ): Center(child: CircularProgressIndicator(color: Colors.black,));
 
 
@@ -45,5 +38,6 @@ class HomePage extends StatelessWidget {
       },));
   }
 }
+
 
 

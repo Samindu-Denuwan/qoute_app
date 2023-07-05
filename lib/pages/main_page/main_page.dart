@@ -3,6 +3,7 @@ import 'package:persistent_bottom_nav_bar_v2/persistent-tab-view.dart';
 import 'package:qoute_app/pages/home_page/home_page.dart';
 import 'package:qoute_app/pages/qoutes_page/qoutes_page.dart';
 import 'package:flutter_vector_icons/flutter_vector_icons.dart';
+import 'package:flutter_native_splash/flutter_native_splash.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class MainPage extends StatefulWidget {
   @override
   State<MainPage> createState() => _MainPageState();
 }
+
 
 class _MainPageState extends State<MainPage> {
   late PersistentTabController controller;
@@ -19,6 +21,12 @@ class _MainPageState extends State<MainPage> {
     // TODO: implement initState
     super.initState();
     controller = PersistentTabController(initialIndex: 0);
+    initialization();
+  }
+
+  void initialization() async {
+    await Future.delayed(const Duration(seconds: 1));
+    FlutterNativeSplash.remove();
   }
 
   List<Widget> _buildScreens() {
@@ -37,7 +45,7 @@ class _MainPageState extends State<MainPage> {
         inactiveColorPrimary: Colors.grey,
       ),
       PersistentBottomNavBarItem(
-        icon: const Icon(Icons.home),
+        icon: const Icon(FontAwesome.quote_left),
         title: "Quotes",
         activeColorPrimary: Colors.blue,
         inactiveColorPrimary: Colors.grey,
