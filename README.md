@@ -2,15 +2,12 @@
 
 A new Flutter project.
 
+
+https://github.com/Samindu-Denuwan/qoute_app/assets/86373715/7431e12f-7a56-4f89-b70b-dab5f1d867c7
+
+
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+This project is a starting point for a Flutter application usin Quotes API
 
-A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
